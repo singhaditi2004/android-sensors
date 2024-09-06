@@ -17,7 +17,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
-    AppCompatButton accelor, stop;
+    AppCompatButton accelor, stop,proxi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +40,17 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         } else {
             Toast.makeText(this, "No sensor found", Toast.LENGTH_SHORT).show();
         }
+        proxi=findViewById(R.id.proxi);
+        proxi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sensor proxi= sm.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+                if(proxi!=null){
+                    sm.registerListener(MainActivity.this,proxi,SensorManager.SENSOR_DELAY_NORMAL);
+                }
+            }
+        });
+
         stop=findViewById(R.id.stop);
         stop.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +72,16 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
             TextView txt = findViewById(R.id.sensorsText);
             txt.setText("X: " + event.values[0] + "Y: " + event.values[1] + "Z: " + event.values[2]);
+        }
+        if (event.sensor.getType() == Sensor.TYPE_PROXIMITY) {
+            TextView txt = findViewById(R.id.sensorsText);
+            txt.setText("Values "+event.values[0]);
+            if(event.values[0]>0){
+                Toast.makeText(this, "Object is far", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Toast.makeText(this, "Object is near", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 

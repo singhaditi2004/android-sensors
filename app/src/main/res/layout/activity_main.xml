@@ -40,6 +40,17 @@
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="18dp" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/proxi"
+            android:layout_width="150dp"
+            android:layout_height="65dp"
+            android:layout_margin="8dp"
+            android:background="@android:color/holo_blue_dark"
+            android:padding="10dp"
+            android:text="Proximity Sensor"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
