@@ -5,8 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
@@ -15,8 +15,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="130dp"
-        android:text="Sensors"
         android:gravity="center"
+        android:text="Sensors"
         android:textColor="@color/black"
         android:textSize="23dp" />
 
@@ -40,6 +40,7 @@
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="18dp" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/proxi"
             android:layout_width="150dp"
@@ -48,6 +49,27 @@
             android:background="@android:color/holo_blue_dark"
             android:padding="10dp"
             android:text="Proximity Sensor"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/light"
+            android:layout_width="150dp"
+            android:layout_height="65dp"
+            android:layout_margin="8dp"
+            android:background="@android:color/holo_blue_dark"
+            android:padding="10dp"
+            android:text="Light Sensor"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="18dp" />
